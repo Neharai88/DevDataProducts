@@ -1,0 +1,42 @@
+---
+title: "Developing Data Products Final Course Project"
+author: "Neha Rai"
+date: "July 4, 2017"
+output: ioslides_presentation
+---
+
+## Introduction
+
+-This presentation is part of the Course Project for Module9 Developing Data Products. The peer assessed assignment has two parts. First, we need to create a Shiny application and deploy it on Rstudio's servers. Second, we should use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application. This presentation addresses the second part of the course project.
+
+-The app developed for the first part of the Course Project is avalilable at: https://neharai88.shinyapps.io/MainWorkersClassificationBangalore/
+
+-Source code for ui.R and server.R files are available on the GitHub: https://github.com/Neharai88/DevDataProducts
+
+
+## Main Workers Classification of Bangalore -1991
+
+- This application will assist us to get information about Main Workers Classification of Bangalore -1991
+
+- Choose the different types from the Types dropdownlist and then the  table comprising of Total persons in Bangaloreaccording to the selected Type will be displayed under DISPLAY TABLE Tab. Filter the result based on the selection made.
+
+- In addition, choose the plot type from the plot dropdownlist under PLOT CASES Tab. The plot of dengue cases will be potrayed based on the selection made.
+Selection can be made based on (Sex, Age group and Type)
+
+## Main Workers Dataset of Bangalore -1991
+Data for the application has been downloaded from the below site:
+https://data.gov.in/catalog/main-workers-classified-industrial-category-age-and-sex-census-1991-india-and-states
+```{r, echo = TRUE}
+library(data.table)
+ dt <- read.csv("B02T1102_BANGALORE_RURAL-1991.csv")
+head(dt)
+```
+
+## Female Workers Plot Types
+```{r include=TRUE}
+library(lattice)
+dat <- as.data.table(dt)
+barchart(TotaPopulation_Females~Type,data=dt,groups=Type,beside=T,
+         scales=list(x=list(rot=900000,cex=0.2)))
+```
+
