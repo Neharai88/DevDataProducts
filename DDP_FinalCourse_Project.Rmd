@@ -9,6 +9,8 @@ output: ioslides_presentation
 
 -This presentation is part of the Course Project for Module9 Developing Data Products. The peer assessed assignment has two parts. First, we need to create a Shiny application and deploy it on Rstudio's servers. Second, we should use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application. This presentation addresses the second part of the course project.
 
+- Presentation Slide id pulished on rpubs is available at : http://rpubs.com/Neharai88/289058
+
 -The app developed for the first part of the Course Project is avalilable at: https://neharai88.shinyapps.io/MainWorkersClassificationBangalore/
 
 -Source code for ui.R and server.R files are available on the GitHub: https://github.com/Neharai88/DevDataProducts
